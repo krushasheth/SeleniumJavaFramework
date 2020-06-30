@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Failed suite [Default suite]" duration-ms="19209" started-at="2020-06-30T17:22:40 EDT" finished-at="2020-06-30T17:22:59 EDT">
+    <groups>
+      <group name="regression">
+        <method signature="GoogleSearchTest.googleSearchTest()[pri:0, instance:test.GoogleSearchTest@4b1c1ea0]" name="googleSearchTest" class="test.GoogleSearchTest"/>
+      </group> <!-- regression -->
+    </groups>
+    <test name="Default test(failed)" duration-ms="19209" started-at="2020-06-30T17:22:40 EDT" finished-at="2020-06-30T17:22:59 EDT">
+      <class name="test.GoogleSearchTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:test.GoogleSearchTest@4b1c1ea0]" name="setup" is-config="true" duration-ms="6063" started-at="2020-06-30T17:22:40 EDT" finished-at="2020-06-30T17:22:46 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="googleSearchTest()[pri:0, instance:test.GoogleSearchTest@4b1c1ea0]" name="googleSearchTest" duration-ms="13061" started-at="2020-06-30T17:22:46 EDT" finished-at="2020-06-30T17:22:59 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- googleSearchTest -->
+        <test-method status="PASS" signature="flush()[pri:0, instance:test.GoogleSearchTest@4b1c1ea0]" name="flush" is-config="true" duration-ms="530" started-at="2020-06-30T17:22:59 EDT" finished-at="2020-06-30T17:23:00 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flush -->
+      </class> <!-- test.GoogleSearchTest -->
+    </test> <!-- Default test(failed) -->
+  </suite> <!-- Failed suite [Default suite] -->
+</testng-results>
