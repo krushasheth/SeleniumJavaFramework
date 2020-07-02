@@ -9,5 +9,8 @@
 
 ## Setup Instruction
 
-1. Clone the repo.
-2. 
+1. Clone the repo and open the project in Eclipse.
+2. Right click on project folder and select Build Project.
+3. Right click on project folder and select Run As Maven test.
+4. You can find the test result in extent.html file.
+5. You can also find test result in test-output folder.
