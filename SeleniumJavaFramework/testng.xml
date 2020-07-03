@@ -15,7 +15,7 @@
 			<package name="test" />
 		</packages>
 	</test>
-	<!-- <test name="TestOnfirefox" thread-count = "5"> 
+	 <test name="TestOnfirefox" thread-count = "5"> 
 			<parameter name="browserName" value="firefox"></parameter> 
 			<groups> 
 				<run> <include name="regression"/></run>
@@ -23,5 +23,5 @@
 		 	<packages> 
 		 		<package name="test" />
 		    </packages> 
-	 </test> -->
+	 </test>
 </suite> 
