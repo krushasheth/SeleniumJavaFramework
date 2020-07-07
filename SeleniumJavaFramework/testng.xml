@@ -23,5 +23,5 @@
 		 	<packages> 
 		 		<package name="test" />
 		    </packages> 
-	 </test> 
+	 </test>
 </suite> 
