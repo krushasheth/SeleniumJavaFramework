@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.MalformedURLException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -11,6 +12,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -29,14 +32,14 @@ public class GoogleSearchWorkflow {
 	protected static ExtentReports extent;
 
 		@Parameters("browserName")
-		public static void browsers(String browserName) {
+		public static void browsers(String browserName) throws MalformedURLException {
 		htmlReporter = new ExtentHtmlReporter("extent.html");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 		System.out.println("browser name is: " + browserName);
 		if (browserName.equalsIgnoreCase("chrome")) {
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
 		} else if (browserName.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", property + "\\drivers\\geckodriver.exe");
 			driver = new FirefoxDriver();
@@ -44,7 +47,7 @@ public class GoogleSearchWorkflow {
 	}
 
 	@BeforeTest(alwaysRun = true)
-	public static void setup() {
+	public static void launchBrowser() {
 		try {
 			browsers(getProperties("browsername"));
 		} catch (IOException e) {
@@ -60,7 +63,6 @@ public class GoogleSearchWorkflow {
 	public static void clickButton(WebElement btnClick) {
 		WebElement btn = btnClick;
 		btn.submit();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	public static void clickLink(WebElement btnClick) {
@@ -81,8 +83,8 @@ public class GoogleSearchWorkflow {
 		testdata.store(output, null);
 	}
 
-	public static void close() {
-		driver.close();
+	public static void closeBrowser() {
+		driver.quit();
 	}
 
 	@AfterSuite
