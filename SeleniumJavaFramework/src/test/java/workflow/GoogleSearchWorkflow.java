@@ -15,6 +15,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
@@ -32,6 +33,7 @@ public class GoogleSearchWorkflow {
 	protected static ExtentReports extent;
 
 		@Parameters("browserName")
+		@BeforeClass(alwaysRun = true)
 		public static void browsers(String browserName) throws MalformedURLException {
 		htmlReporter = new ExtentHtmlReporter("extent.html");
 		extent = new ExtentReports();
@@ -44,17 +46,15 @@ public class GoogleSearchWorkflow {
 			System.setProperty("webdriver.gecko.driver", property + "\\drivers\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
-	}
-
-	@BeforeTest(alwaysRun = true)
-	public static void launchBrowser() {
-		try {
-			browsers(getProperties("browsername"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 		driver.manage().window().maximize();
 	}
+
+	
+	/*
+	 * @BeforeClass(alwaysRun = true) public static void launchBrowser() { try {
+	 * browsers(getProperties("chromebrowser")); } catch (IOException e) {
+	 * e.printStackTrace(); } }
+	 */
 	public static void setText(WebElement textbox_search, String text) {
 		WebElement txtElement = textbox_search;
 		txtElement.sendKeys(text);
