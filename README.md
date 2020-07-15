@@ -6,6 +6,7 @@
 - It is based on Page Object Model design pattern.
 - Added dependencies like Selenium, TestNG, Extent Reports, Log4j in pom.xml file
 - Includes parallel browser testing
+- Integrated with SauceLabs
 
 ## Setup Instruction
 
