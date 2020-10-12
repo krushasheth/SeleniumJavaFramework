@@ -20,7 +20,6 @@ public class GoogleSearchTest extends GoogleSearchWorkflow {
 		test.pass("Navigated to google.com");
 		setText(GoogleSearchPage.google_textbox, getProperties("amazon"));
 		clickButton(GoogleSearchPage.btn_search);
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		clickLink(GoogleSearchPage.amazonLink);
 		setText(GoogleSearchPage.amazonSearchBox, getProperties("womentops"));
 		clickButton(GoogleSearchPage.amazonSearchBox);

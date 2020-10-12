@@ -15,7 +15,7 @@ public class SaucelabsDemo extends GoogleSearchWorkflow{
 	
 	public static final String URL = "https://Krusha18:6aa9efda-2be8-4407-b233-bd6cecc9a968@ondemand.us-west-1.saucelabs.com:443/wd/hub"; 
 	@Test(groups={"smoke"})
-	public static void sauceLabs() throws IOException {
+	public static void sauceLabs() throws IOException, InterruptedException {
 		DesiredCapabilities caps = DesiredCapabilities.chrome();
 		caps.setCapability("platform", "Windows 10");
 		caps.setCapability("version", "latest");

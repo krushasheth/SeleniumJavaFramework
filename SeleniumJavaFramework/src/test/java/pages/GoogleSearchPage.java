@@ -14,7 +14,7 @@ public class GoogleSearchPage {
 	@FindBy(xpath="//input[@name='btnK']")
 	public static WebElement btn_search;
 	
-	@FindBy(xpath="//h3[contains(text(),'Amazon.com: Online Shopping for Electronics, Appar')]")
+	@FindBy(xpath="//span[contains(text(),'Amazon.com: Online Shopping for Electronics, Appar')]")
 	public static WebElement amazonLink;
 	
 	@FindBy(xpath ="//input[@id='twotabsearchtextbox']")
