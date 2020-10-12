@@ -60,9 +60,10 @@ public class GoogleSearchWorkflow {
 		txtElement.sendKeys(text);
 	}
 
-	public static void clickButton(WebElement btnClick) {
+	public static void clickButton(WebElement btnClick) throws InterruptedException {
 		WebElement btn = btnClick;
 		btn.submit();
+		Thread.sleep(5000);
 	}
 
 	public static void clickLink(WebElement btnClick) {
