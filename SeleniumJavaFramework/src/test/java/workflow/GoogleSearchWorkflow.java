@@ -49,12 +49,6 @@ public class GoogleSearchWorkflow {
 		driver.manage().window().maximize();
 	}
 
-	
-	/*
-	 * @BeforeClass(alwaysRun = true) public static void launchBrowser() { try {
-	 * browsers(getProperties("chromebrowser")); } catch (IOException e) {
-	 * e.printStackTrace(); } }
-	 */
 	public static void setText(WebElement textbox_search, String text) {
 		WebElement txtElement = textbox_search;
 		txtElement.sendKeys(text);
